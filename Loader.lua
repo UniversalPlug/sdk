@@ -24,7 +24,7 @@ local function loadSDKModule(moduleName)
     local path = sdkPaths[moduleName]
     if path then
         local success, result = pcall(function()
-            return loadstring(game:HttpGet("https://github.com/UniversalPlug/sdk/tree/main/" .. path))()
+            return loadstring(game:HttpGet("raw.githubusercontent.com/UniversalPlug/sdk/refs/heads/main/" .. path))()
         end)
         if success then
             SDKLoader[moduleName] = result
